@@ -6,8 +6,10 @@ module.exports = (sequelize ,DataTypes)=>{
         },
         Date:{
             type:DataTypes.DATEONLY,
-            allowNull:false
+            defaultValue:DataTypes.NOW
         },
+    },{
+        timestamps:false
     })
 
     Registrations.associate= (models)=>{
@@ -15,6 +17,7 @@ module.exports = (sequelize ,DataTypes)=>{
             foreignKey:"YouthId",
             as:"youth",
             onDelete: "cascade",  
+            onUpdate: "cascade",  
         })
     }
 

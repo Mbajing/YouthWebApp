@@ -10,8 +10,11 @@ module.exports = (sequelize ,DataTypes)=>{
         },
         Date:{
             type:DataTypes.DATEONLY,
-            allowNull:false
+            
+            defaultValue:DataTypes.NOW
         },
+    },{
+        timestamps:false
     })
 
    

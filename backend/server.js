@@ -3,37 +3,34 @@ const bodyParser = require("body-parser");
 const mysql = require("mysql2");
 require("dotenv").config();
 const morgan = require("morgan");
-const {Offering}= require("./models")
+
 
 const app = express();
 
-const port =  5000;
+const port = 5000;
 
+app.use(morgan("dev"));
 app.use(express.json());
-const db=require('./models');
-
+const db = require("./models");
 
 //Youths Router
-const youthRouter = require('./routers/Youth');
+const youthRouter = require("./routers/Youth");
+const financeRouter = require("./routers/Finance");
+const eventsRouter = require("./routers/Events");
+const contributionRouter = require("./routers/Contribution");
+const offeringRouter = require("./routers/Offering");
+const registrationRouter = require("./routers/Registrations");
 
+app.use("/youth", youthRouter);
+app.use("/finance", financeRouter);
+app.use("/events", eventsRouter);
+app.use("/contribution", contributionRouter);
+app.use("/offering", offeringRouter);
+app.use("/registration", registrationRouter);
 
-app.use("/youth",youthRouter)
-
-
-app.post("/offering" , async (req,res)=>{
-  const offering = req.body;
-  await Offering.create(offering);
-  res.json(offering);
-})
-
-
-db.sequelize.sync().then(()=>{
+db.sequelize.sync({ alter: true }).then(() => {
   app.listen(port, () => console.log(`listen on port ${port}`));
-})
-
-
-
-
+});
 
 // //get all youths
 // app.get("/youths", (req, res) => {
@@ -45,8 +42,6 @@ db.sequelize.sync().then(()=>{
 //     }
 //   });
 // });
-
-
 
 // const db = mysql.createPool({
 //   host: process.env.DB_Host,
@@ -79,19 +74,16 @@ db.sequelize.sync().then(()=>{
 //   })
 // })
 
-
 // //update youth record from database
 // app.put('/youths',(req ,res)=>{
 //   const updateQuery = "UPDATE youths SET firstName = ? , lastName = ?  WHERE  youthid = ? "
 //   db.query(updateQuery ,[req.body.firstName , req.body.lastName, req.body.youthid ], (err ,result)=>{
 //    if(err){
 //     console.log(err)
-//    } 
+//    }
 //    else{
 //     res.send(result)
 //    }
 //   })
 
-
 // })
-
