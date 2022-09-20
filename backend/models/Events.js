@@ -10,11 +10,11 @@ module.exports = (sequelize ,DataTypes)=>{
         },
         Date:{
             type:DataTypes.DATEONLY,
-            allowNull:false
+            allowNull:true
         },
         presidentRemark:{
             type:DataTypes.STRING,
-            allowNull:false
+            allowNull:true
 
         },
         secretaryRemark:{

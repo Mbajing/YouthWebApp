@@ -7,7 +7,7 @@ const { Events } = require("../models");
 
 //get all succesful events
 router.get("/",async (req,res)=>{
-    const event =  await Events.findAll(event)
+    const event =  await Events.findAll()
    
     res.json(event)
 })
@@ -15,7 +15,7 @@ router.get("/",async (req,res)=>{
 
 
 //add succesful events
-router.get("/",async (req,res)=>{
+router.post("/",async (req,res)=>{
     const event = req.body;
     await Events.create(event)
     res.json(event)
