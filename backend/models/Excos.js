@@ -16,8 +16,9 @@ module.exports = (sequelize ,DataTypes)=>{
     Excos.associate= (models)=>{
         Excos.belongsTo(models.Youth,{
             foreignKey:"YouthId",
-            as:"youth",
-            onDelete: "cascade",  
+            
+            onDelete: "cascade", 
+            onUpdate: "cascade",   
         })
     }
 

@@ -15,7 +15,7 @@ module.exports = (sequelize ,DataTypes)=>{
     Registrations.associate= (models)=>{
         Registrations.belongsTo(models.Youth,{
             foreignKey:"YouthId",
-            as:"youth",
+            
             onDelete: "cascade",  
             onUpdate: "cascade",  
         })

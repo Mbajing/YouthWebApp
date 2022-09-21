@@ -1,13 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const { Registrations } = require("../models");
+const { Registrations ,Youth } = require("../models");
+
 
 //Registrations Router
 
 
 //get all  Contributions
 router.get("/",async (req,res)=>{
-    const registration =  await Registrations.findAll()
+    const registration =  await Registrations.findAll({include:Youth})
    
     res.json(registration)
 })

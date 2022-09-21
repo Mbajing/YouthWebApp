@@ -22,7 +22,8 @@ router.post("/", async (req, res) => {
 
   //get all excos
 router.get("/exco",async (req,res)=>{
-  const excos =  await Excos.findAll()
+  const excos =  await Excos.findAll({include:Youth})
+  
  
   res.json(excos)
 })

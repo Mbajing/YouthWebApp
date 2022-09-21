@@ -7,14 +7,14 @@ const { Contribution } = require("../models");
 
 //get all  Contributions
 router.get("/",async (req,res)=>{
-    const contribution =  await Contribution.findAll(contribution)
+    const contribution =  await Contribution.findAll()
    
     res.json(contribution)
 })
 
 
 //add a contribution
-router.get("/",async (req,res)=>{
+router.post("/",async (req,res)=>{
     const contribution = req.body;
     await Contribution.create(contribution)
     res.json(contribution)

@@ -20,6 +20,7 @@ const eventsRouter = require("./routers/Events");
 const contributionRouter = require("./routers/Contribution");
 const offeringRouter = require("./routers/Offering");
 const registrationRouter = require("./routers/Registrations");
+const attendanceRouter = require("./routers/Attendance");
 
 app.use("/youth", youthRouter);
 app.use("/finance", financeRouter);
@@ -27,6 +28,7 @@ app.use("/events", eventsRouter);
 app.use("/contribution", contributionRouter);
 app.use("/offering", offeringRouter);
 app.use("/registration", registrationRouter);
+app.use("/attendance", attendanceRouter);
 
 db.sequelize.sync({ alter: true }).then(() => {
   app.listen(port, () => console.log(`listen on port ${port}`));

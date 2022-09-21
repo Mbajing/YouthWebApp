@@ -27,17 +27,17 @@ module.exports = (sequelize ,DataTypes)=>{
     })
 
     Youth.associate= (models)=>{
-        Youth.hasMany(models.Registration,{
+        Youth.hasMany(models.Registrations,{
             foreignKey:"YouthId",
-            as:"youthRegistration",
+            // as:"youthRegistration",
             onDelete: "cascade",  
         })
     };
 
     Youth.associate= (models)=>{
-        Youth.hasMany(models.Exco,{
-            foreignKey:"YouthId",
-            as:"youthExco",
+        Youth.hasMany(models.Excos,{
+            
+            // as:"youthExco",
             
             onDelete: "cascade",  
         })
@@ -46,8 +46,8 @@ module.exports = (sequelize ,DataTypes)=>{
 
     Youth.associate= (models)=>{
         Youth.hasMany(models.Contribution,{
-            foreignKey:"YouthId",
-            as:"youthContribution",
+          
+            // as:"youthContribution",
             onDelete: "cascade",  
         })
     }
