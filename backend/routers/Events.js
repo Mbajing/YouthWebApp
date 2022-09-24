@@ -14,7 +14,7 @@ router.get("/",async (req,res)=>{
 
 
 
-//add succesful events
+//add succesful events   database
 router.post("/",async (req,res)=>{
     const event = req.body;
     await Events.create(event)
