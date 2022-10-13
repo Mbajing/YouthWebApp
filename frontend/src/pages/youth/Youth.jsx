@@ -1,13 +1,12 @@
 import React from 'react'
-import Sidebar from '../../components/sidebar/Sidebar'
+import NavigationTab from '../../components/tabs/NavigationTab'
 import "./youth.css"
+
 export const Youth = () => {
   return (
-    <div className='home'>
-    
-    <Sidebar/>
-    <div className="home__container">Container</div>
-    </div>
+   <div>
+   <NavigationTab/>
+   </div>
    
   )
 }

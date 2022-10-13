@@ -1,0 +1,8 @@
+.home{
+    display: flex;
+}
+
+.home__container{
+    
+    flex:6
+}

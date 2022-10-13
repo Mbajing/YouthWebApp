@@ -49,6 +49,10 @@ li{
     padding-left: 0px;
     padding-top: 60px;
 }
+
+li:hover {
+    background-color: #ece8ff;
+  }
 .icon{
      font-size: 10;
      color: #01c664;

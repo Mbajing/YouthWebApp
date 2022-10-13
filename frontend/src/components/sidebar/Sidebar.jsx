@@ -7,8 +7,10 @@ import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 import LogoutIcon from '@mui/icons-material/Logout';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import { useNavigate } from "react-router-dom";
 
 function Sidebar() {
+  let navigate = useNavigate();
   return (
     <div className="sidebar">
       <div className="top">
@@ -17,19 +19,19 @@ function Sidebar() {
       <hr/>
       <div className="center">
         <ul>
-          <li>
-            <PersonIcon className="icon"/>
+          <li onClick={() => navigate('/')} >
+            <PersonIcon className="icon" />
             <span>Youths</span>
           </li>
-          <li>
+          <li onClick={() => navigate('/finance')} >
             <AccountBalanceWalletIcon className="icon"/>
             <span>Finance</span>
           </li>
-          <li>
+          <li onClick={() => navigate('/attendance')}>
             <LeaderboardIcon className="icon"/>
             <span>Attendance</span>
           </li>
-          <li>
+          <li onClick={() => navigate('/event')}>
             <EventIcon className="icon"/>
             <span>Events</span>
           </li>
