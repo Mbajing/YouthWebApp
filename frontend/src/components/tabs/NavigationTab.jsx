@@ -1,15 +1,16 @@
 import React from 'react'
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
 import { useState } from 'react';
 import colors from '../../constants/colors';
 
 
 
 function NavigationTab() {
-  const [value, setValue] = useState('one');
+  const [value, setValue] = useState('1');
 
   console.log(colors.PRIMARY_COLOR)
 
@@ -18,18 +19,21 @@ function NavigationTab() {
   };
   return (
     <div>
-  <Box sx={{ width: '100%' }}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        textColor='primary'
-        indicatorColor= 'primary'
-        aria-label="secondary tabs example"
-      >
-        <Tab value="one" label="Item One" />
-        <Tab value="two" label="Item Two" />
-        <Tab value="three" label="Item Three" />
-      </Tabs>
+   <Box sx={{ width: '50%', typography: 'body1'  }} >
+      <TabContext value={value}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <TabList onChange={handleChange} aria-label="lab API tabs example">
+            <Tab label="Dashboard" value="1" />
+            <Tab label="Youths" value="2" />
+            <Tab label="Registered Youths" value="3" />
+            <Tab label="Executives" value="4" />
+          </TabList>
+        </Box>
+        <TabPanel value="1">Dashboard</TabPanel>
+        <TabPanel value="2">Youths</TabPanel>
+        <TabPanel value="3">Registered Youths</TabPanel>
+        <TabPanel value="4">Exceutives</TabPanel>
+      </TabContext>
     </Box>
     </div>
   )
