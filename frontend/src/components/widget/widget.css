@@ -1,0 +1,23 @@
+.widget{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px 1px rgba(201 , 201 ,201 ,0.47);
+    height:90px;
+    width: 200px;
+    margin-top: 40px;
+    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.widget__title{
+    font-weight: bold;
+}
+.widget__data{
+    font-size: x-large;
+    font-weight: bolder;
+    padding: 10px;
+}
+
