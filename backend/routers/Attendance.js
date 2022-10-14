@@ -5,7 +5,7 @@ const { Attendance } = require("../models");
 //Attendance Router
 
 
-//get all  Contributions
+//get all  attendance
 router.get("/",async (req,res)=>{
     const attendance =  await Attendance.findAll()
    
