@@ -6,7 +6,7 @@
     box-shadow: 2px 4px 10px 1px rgba(201 , 201 ,201 ,0.47);
     height:90px;
     width: 200px;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     margin-left: 10px;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,8 @@
 }
 .widget__data{
     font-size: x-large;
-    font-weight: bolder;
+    font-weight: 900;
     padding: 10px;
+    color:#01c664
 }
 
