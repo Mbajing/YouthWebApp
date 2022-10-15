@@ -5,6 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import "./listTable.css"
 import { IconButton } from '@mui/material';
+import { useState  ,useEffect} from 'react';
 
 
 
@@ -66,6 +67,13 @@ const columns = [
     {  id:9,lastName: 'Roxie', firstName: 'Harvey',contact:632415123 , address:"Bokwaongo",occupation:'Student', },
   ];
 function ListTable() {
+    const [listOfPosts, setListOfPosts] = useState([]);
+
+    useEffect(() => {
+        axios.get("localhost:5000/youth/").then((response) => {
+          setListOfPosts(response.data);
+        });
+      }, []);
   return (
     <div style={{ height: 400, width: '60%' ,marginLeft:20 }}>
       <DataGrid

@@ -3,12 +3,13 @@ const bodyParser = require("body-parser");
 const mysql = require("mysql2");
 require("dotenv").config();
 const morgan = require("morgan");
+const cors = require('cors')
 
 
 const app = express();
 
 const port = 5000;
-
+app.use(cors())
 app.use(morgan("dev"));
 app.use(express.json());
 const db = require("./models");
