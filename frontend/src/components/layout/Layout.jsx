@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Sidebar from '../sidebar/Sidebar'
 import './layout.css'
@@ -8,6 +9,7 @@ function Layout({children}) {
     
     <Sidebar/>
     <div className="home__container">
+      
         {children}
     </div>
     </div>

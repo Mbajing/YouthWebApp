@@ -1,10 +1,10 @@
 import React from 'react'
 import "./youthsAndNumber.css"
 
-function YouthsAndNumber() {
+function YouthsAndNumber({total}) {
   return (
     <span className='youth-number' >
-       Youths(50)
+       Youths({total})
     </span>
   )
 }

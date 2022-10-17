@@ -9,17 +9,18 @@ import {Typography} from '@mui/material';
 
 
 
-function AddButton() {
+function AddButton({handleClick}) {
   
   return (
 
     <Button variant="contained" startIcon={
-      <IconButton  color="secondary">
-    <PersonAddIcon />
-    </IconButton>}
+       
+    <PersonAddIcon color="secondary" />
+    
+  }
 
 size="small"
-  >
+   onClick={handleClick}>
  
 
  <span style={{color:"white" ,paddingTop:5 , marginLeft:-8}}>Add Youth</span>

@@ -16,7 +16,8 @@ router.get("/",async (req,res)=>{
 router.post("/", async (req, res) => {
     const youth = req.body;
     await Youth.create(youth);
-    res.json(youth);
+    const allYouths = await Youth.findAll()
+    res.json(allYouths);
   });
 
 

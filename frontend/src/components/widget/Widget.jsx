@@ -1,14 +1,14 @@
 import React from 'react'
 import "./widget.css"
 
-function Widget() {
+function Widget({title ,number}) {
   return (
     <div className='widget'>
      <div className="widget__title">
-       Number of youths
+      {title}
      </div>
      <div className="widget__data">
-      50
+      {number}
      </div>
     </div>
   )

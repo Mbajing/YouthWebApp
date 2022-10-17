@@ -6,38 +6,38 @@ import EditIcon from '@mui/icons-material/Edit';
 import "./listTable.css"
 import { IconButton } from '@mui/material';
 import { useState  ,useEffect} from 'react';
-
+import axios from 'axios';
 
 
 const columns = [
    
-    { field: 'firstName', headerName: 'First name', width: 130 },
-    { field: 'lastName', headerName: 'Last name', width: 130 },
+    { field: 'firstname', headerName: 'First name', width: 200 },
+    { field: 'lastname', headerName: 'Last name', width: 200 },
     {
-      field: 'contact',
+      field: 'phoneNumber',
       headerName: 'Contact',
     //   type: 'number',
-      width: 100,
+      width: 160,
     },
     {
-      field: 'address',
+      field: 'location',
       headerName: 'Address',
       description: 'This column has a value getter and is not sortable.',
       sortable: false,
-      width: 130,
+      width: 200,
     //   valueGetter: (params) =>
     //     `${params.row.firstName || ''} ${params.row.lastName || ''}`,
     },{
         field:'occupation',
         headerName:"Occupation",
         sortable:false,
-        width:120
+        width:200
     },
     {
         field:"action",
         headerName:"Action",
         sortable:false,
-        width:140,
+        width:200,
         disableventClickEventBubbling:true,
         renderCell:(params)=>{
             return(
@@ -66,21 +66,26 @@ const columns = [
     {id:8,  lastName: 'Frances', firstName: 'Rossini',contact:632415123 , address:"Bokwaongo",occupation:'Student', },
     {  id:9,lastName: 'Roxie', firstName: 'Harvey',contact:632415123 , address:"Bokwaongo",occupation:'Student', },
   ];
-function ListTable() {
-    const [listOfPosts, setListOfPosts] = useState([]);
+function ListTable({allYouths}) {
+    // const [listOfPosts, setListOfPosts] = useState([]);
+    console.log(allYouths)
+    
 
-    useEffect(() => {
-        axios.get("localhost:5000/youth/").then((response) => {
-          setListOfPosts(response.data);
-        });
-      }, []);
+    // useEffect(() => {
+    //     axios.get("http://localhost:5000/youth/").then((response) => {
+    //       setListOfPosts(response.data);
+    //       console.log(response.data)
+    //     });
+    //   }, []);
+
+      // console.log(listOfPosts)
   return (
-    <div style={{ height: 400, width: '60%' ,marginLeft:20 }}>
+    <div style={{ height: 550, width: '100%' ,marginLeft:20 }}>
       <DataGrid
-        rows={rows}
+        rows={allYouths}
         columns={columns}
-         pageSize={5}
-         rowsPerPageOptions={[5]}
+         pageSize={10}
+         rowsPerPageOptions={[10]}
          disableSelectionOnClick
         // getRowId={(row) => row.id}
         //  checkboxSelection
