@@ -9,7 +9,7 @@ import {Typography} from '@mui/material';
 
 
 
-function AddButton({handleClick}) {
+function AddButton({handleClick ,title}) {
   
   return (
 
@@ -23,7 +23,7 @@ size="small"
    onClick={handleClick}>
  
 
- <span style={{color:"white" ,paddingTop:5 , marginLeft:-8}}>Add Youth</span>
+ <span style={{color:"white" ,paddingTop:5 , marginLeft:-8}}>{title}</span>
 
   
     

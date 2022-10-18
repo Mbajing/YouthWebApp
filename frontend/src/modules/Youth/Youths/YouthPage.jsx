@@ -18,6 +18,12 @@ function YouthPage() {
     });
   }, []);
 
+  useEffect(()=>{
+
+  },[])
+
+
+
   const handleClick = () => {
     setVisible(!visible);
   };
@@ -26,7 +32,7 @@ function YouthPage() {
       <div className="Youth-container__upper">
         <YouthsAndNumber total={allYouths.length} />
         <Search />
-        <AddButton handleClick={handleClick} />
+        <AddButton handleClick={handleClick} title={"Add Youth"} />
       </div>
 
       {visible ? (

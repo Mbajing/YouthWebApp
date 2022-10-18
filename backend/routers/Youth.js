@@ -20,6 +20,15 @@ router.post("/", async (req, res) => {
     res.json(allYouths);
   });
 
+//delete a youth
+router.delete("/:id",  async (req, res) => {
+  const id = req.params.id;
+ await Youth.destroy({ where: {id: id}})
+
+ res.json("deleted succesfully")
+    });
+
+
 
   //get all excos
 router.get("/exco",async (req,res)=>{

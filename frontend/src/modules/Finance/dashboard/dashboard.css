@@ -1,0 +1,23 @@
+.finance-dashboard{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    width: 80vw;
+}
+
+@media screen and (max-width: 897px){
+
+
+    .Youth-dashboard{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+       
+        height: 60vh;
+        margin-left: -43px;
+       
+        
+    }
+
+}

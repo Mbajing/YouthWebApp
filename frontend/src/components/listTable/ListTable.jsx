@@ -47,10 +47,10 @@ const columns = [
             alignItems: "center",
           }}
         >
-          <IconButton>
+          <IconButton >
             <EditIcon style={{}} color="primary" />
           </IconButton>
-          <IconButton onClick={() => console.log("hello")}>
+          <IconButton onClick={()=>handleDelete(params.id)}>
             <DeleteIcon color="error" />
           </IconButton>
         </div>
@@ -59,92 +59,15 @@ const columns = [
   },
 ];
 
-const rows = [
-  {
-    id: 1,
-    lastName: "Snow",
-    firstName: "Jon",
-    contact: 632415123,
-    address: "Bokwaongo",
-    occupation: "Student",
-  },
-  {
-    id: 2,
-    lastName: "Lannister",
-    firstName: "Cersei",
-    contact: 632415123,
-    address: "Bokwaongo",
-    occupation: "Student",
-  },
-  {
-    id: 3,
-    lastName: "Lannister",
-    firstName: "Jaime",
-    contact: 632415123,
-    address: "Bokwaongo",
-    occupation: "Student",
-  },
-  {
-    id: 4,
-    lastName: "Stark",
-    firstName: "Arya",
-    contact: 632415123,
-    address: "Bokwaongo",
-    occupation: "Student",
-  },
-  {
-    id: 5,
-    lastName: "Targaryen",
-    firstName: "Daenerys",
-    contact: 632415123,
-    address: "Bokwaongo",
-    occupation: "Student",
-  },
-  {
-    id: 6,
-    lastName: "Melisandre",
-    firstName: "Joseph",
-    contact: 632415123,
-    address: "Bokwaongo",
-    occupation: "Student",
-  },
-  {
-    id: 7,
-    lastName: "Clifford",
-    firstName: "Ferrara",
-    contact: 632415123,
-    address: "Bokwaongo",
-    occupation: "Student",
-  },
-  {
-    id: 8,
-    lastName: "Frances",
-    firstName: "Rossini",
-    contact: 632415123,
-    address: "Bokwaongo",
-    occupation: "Student",
-  },
-  {
-    id: 9,
-    lastName: "Roxie",
-    firstName: "Harvey",
-    contact: 632415123,
-    address: "Bokwaongo",
-    occupation: "Student",
-  },
-];
-function ListTable({ allYouths }) {
-  // const [listOfPosts, setListOfPosts] = useState([]);
-  console.log(allYouths);
 
-  // useEffect(() => {
-  //     axios.get("http://localhost:5000/youth/").then((response) => {
-  //       setListOfPosts(response.data);
-  //       console.log(response.data)
-  //     });
-  //   }, []);
 
-  // console.log(listOfPosts)
+const handleDelete =(id)=>{
+      axios.delete(`http://localhost:5000/youth/${id}`).then((response)=>{
+               console.log(response.data)
+      })
+}
+function ListTable({ allYouths , handleFunction }) {
+ 
   return (
     <div style={{ height: 550, width: "100%", marginLeft: 20 }}>
       <DataGrid
