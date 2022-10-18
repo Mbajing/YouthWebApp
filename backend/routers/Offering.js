@@ -5,7 +5,7 @@ const { Offering } = require("../models");
 //Offering Router
 
 
-//get all  Contributions
+//get all  offerings
 router.get("/",async (req,res)=>{
     const offering =  await Offering.findAll()
    
@@ -19,5 +19,20 @@ router.post("/",async (req,res)=>{
     await Offering.create(offering)
     res.json(offering)
 })
+
+//sum all offerings
+router.get("/sumOffering",async (req,res)=>{
+ const sumOffering =   await Offering.sum("Amount")
+       res.json(sumOffering)
+    
+})
+
+//delete an offering
+router.delete("/:id",  async (req, res) => {
+    const id = req.params.id;
+   await Offering.destroy({ where: {id: id}})
+  
+   res.json("deleted succesfully")
+      });
 
 module.exports = router

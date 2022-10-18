@@ -1,11 +1,9 @@
 import React from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import "./listTable.css";
 import { IconButton } from "@mui/material";
-import { useState, useEffect } from "react";
 import axios from "axios";
 
 const columns = [

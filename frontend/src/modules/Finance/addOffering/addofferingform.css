@@ -1,0 +1,62 @@
+:root {
+    --primary: #01c664;
+    --error: #e7195a;
+  }
+.AddOffering{
+    display: grid;
+    grid-template-columns: repeat(2,200px);
+    grid-template-rows: repeat(2,70px);  
+   gap:15px
+}
+
+.AddOffering__input{
+    grid-column: span 1;
+    padding-right: 30px;
+
+}
+
+.AddOffering__input input{
+    padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.AddOffering button{
+    background: var(--primary);
+    border: 0;
+   color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 80px;
+    height: 40px;
+}
+
+.AddOffering__button{
+   
+    display: flex;
+   
+    margin-top: 25px;
+    
+}
+
+@media screen and (max-width: 568px){
+
+    .AddOffering__input{
+        grid-column: span 1;
+        display: flex;
+        flex-direction: column;
+
+
+    }
+
+    .AddOffering__input input{
+        max-width: 180px;
+    }
+
+
+
+}
