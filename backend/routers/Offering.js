@@ -17,7 +17,8 @@ router.get("/",async (req,res)=>{
 router.post("/",async (req,res)=>{
     const offering = req.body;
     await Offering.create(offering)
-    res.json(offering)
+    const allOffering =  await Offering.findAll()
+    res.json(allOffering)
 })
 
 //sum all offerings

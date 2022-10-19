@@ -44,7 +44,7 @@ function YouthPage() {
       )}
 
       <div className="Youth-container__table">
-        <ListTable allYouths={allYouths} />
+        <ListTable allData={allYouths} />
       </div>
     </div>
   );

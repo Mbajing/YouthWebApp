@@ -16,7 +16,7 @@ function AddYouthForm({ setAllYouths, allYouths }) {
     await axios.post("http://localhost:5000/youth/", data).then((response) => {
       setAllYouths(response.data);
 
-      console.log(response.data);
+      console.log("my response",response.data);
       setFirstname("");
       setLastname("");
       setPhoneNumber("");

@@ -40,7 +40,7 @@ function OfferingPage() {
     <div className='offering-container'>
         <div className='offering-container__upper'>
             <Amount  number={totalOffering}/>
-            <Search/>
+           
             <AddButton title={"Add Offering"} handleClick={handleClick}/>
         </div>
      {visible ?  <div className="offering-container__form" >
