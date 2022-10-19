@@ -8,6 +8,7 @@ import { useState } from 'react';
 import colors from '../../../constants/colors';
 import Dashboard  from "../dashboard/Dashboard"
 import OfferingPage from '../offerings/OfferingPage';
+import IncomePage from '../income/IncomePage';
 
 function NavigationTab() {
 
@@ -34,7 +35,7 @@ function NavigationTab() {
         </Box>
         <TabPanel value="1"><Dashboard/></TabPanel>
         <TabPanel value="2"><OfferingPage/></TabPanel>
-        <TabPanel value="3">Income</TabPanel>
+        <TabPanel value="3"><IncomePage/></TabPanel>
         <TabPanel value="4">Register a Youth</TabPanel>
         <TabPanel value="5">Expenses</TabPanel>
       </TabContext>

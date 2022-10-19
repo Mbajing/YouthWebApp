@@ -7,7 +7,10 @@ import YouthsAndNumber from "../../../components/youthsAndNumber/YouthsAndNumber
 import "./youth.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import {data} from "../../../constants/columns/data"
 
+
+const {YouthColumns}= data
 function YouthPage() {
   const [visible, setVisible] = useState(false);
   const [allYouths, setAllYouths] = useState([]);
@@ -44,7 +47,7 @@ function YouthPage() {
       )}
 
       <div className="Youth-container__table">
-        <ListTable allData={allYouths} />
+        <ListTable allData={allYouths} columns={YouthColumns} />
       </div>
     </div>
   );

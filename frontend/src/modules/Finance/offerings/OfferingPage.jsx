@@ -1,7 +1,6 @@
 import React from 'react'
 import Amount from '../../../components/amount/Amount'
 import AddButton from '../../../components/button/AddButton'
-import Search from '../../../components/search/Search'
 import AddOfferingForm from '../addOffering/AddOfferingForm'
 import "./offeringpage.css"
 import { useState ,useEffect } from 'react'
@@ -30,7 +29,7 @@ function OfferingPage() {
     //     ;
     //   }, []);
 
-      console.log(allOfferings)
+      
 
     const handleClick = () => {
         setVisible(!visible);

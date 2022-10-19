@@ -8,6 +8,13 @@ const handleDelete =(id)=>{
            console.log(response.data)
   })
 }
+
+
+const handleDeleteIncome=(id)=>{
+  axios.delete(`http://localhost:5000/finance/${id}`).then((response)=>{
+    console.log(response.data)
+})
+} 
 export   const data ={
 
     YouthColumns:[
@@ -82,7 +89,37 @@ export   const data ={
             <IconButton >
               <EditIcon style={{}} color="primary" />
             </IconButton>
-            <IconButton onClick={()=>handleDelete(params.id)}>
+            <IconButton onClick={()=>handleDeleteIncome(params.id)}>
+              <DeleteIcon color="error" />
+            </IconButton>
+          </div>
+        );
+      },
+    },
+],
+ Expensecolumns : [
+  { field: "Amount", headerName: "Amount", width: 400  },
+  { field: "Reason", headerName: "Reason", width: 400  },
+  { field: "Date", headerName: "Date", width: 300  },
+  {
+      field: "action",
+      headerName: "Action",
+      sortable: false,
+      width: 200,
+      disableventClickEventBubbling: true,
+      renderCell: (params) => {
+        return (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <IconButton >
+              <EditIcon style={{}} color="primary" />
+            </IconButton>
+            <IconButton onClick={()=>handleDeleteIncome(params.id)}>
               <DeleteIcon color="error" />
             </IconButton>
           </div>
