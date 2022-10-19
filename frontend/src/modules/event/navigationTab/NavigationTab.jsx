@@ -5,18 +5,14 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { useState } from 'react';
-import colors from '../../constants/colors';
-
-
 
 function NavigationTab() {
-  const [value, setValue] = useState('1');
+    const [value, setValue] = useState('1');
 
- 
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+      };
+      
   return (
     <div>
    <Box sx={{ width: '50%', typography: 'body1'  }} >

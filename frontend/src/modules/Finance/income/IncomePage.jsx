@@ -5,6 +5,7 @@ import { useState ,useEffect } from 'react'
 import ListTable from '../../../components/listTable/ListTable'
 import axios from 'axios'
 import {data}from "../../../constants/columns/data"
+import AddFinanceForm from '../../../components/addFinanceForm/AddFinanceForm'
 
 function IncomePage() {
 
@@ -13,6 +14,33 @@ function IncomePage() {
     const [visible, setVisible] = useState(false);
     const [allIncome, setAllIncome] = useState([])
     const [totalIncome , setTotalIncome] = useState("")
+
+    const [amount ,setAmount]= useState("")
+    const [reason ,setReason]=useState("")
+    const [date ,setDate]= useState("")
+
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      const data = { Amount:amount , Source:reason, Date:date };
+      await axios.post("http://localhost:5000/finance/income", data).then((response) => {
+        setAllIncome(response.data);
+  
+       
+        setAmount("");
+        setDate("");
+        setReason("")
+       
+      });
+      // console.log(firstname ,lastname, phoneNumber ,location ,occupation)
+    };
+
+
+
+
+
+
+    
       
     useEffect(() => {
         axios.get("http://localhost:5000/finance/income").then((response) => {
@@ -37,6 +65,16 @@ function IncomePage() {
             <AddButton title={"Add Income"} handleClick={handleClick}/>
         </div>
      {visible ?  <div className="offering-container__form" >
+      <AddFinanceForm
+      amount={amount}
+      setAmount={setAmount}
+      date={date}
+      setDate={setDate}
+      reason={reason}
+      setReason={setReason}
+      handleSubmit={handleSubmit}
+
+      />
           {/* <AddOfferingForm setAllIncome={setAllIncome} allIncome={allIncome}/> */}
         </div>:<></>}  
         <div className='offering-container__table'>

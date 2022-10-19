@@ -1,0 +1,65 @@
+:root {
+    --primary: #01c664;
+    --error: #e7195a;
+  }
+.AddFinance{
+    display: grid;
+    grid-template-columns: repeat(2,250px);
+    grid-template-rows: repeat(2,70px);  
+   gap:20px;
+   margin-bottom:30px;
+   margin-top:-10px
+
+}
+
+.AddFinance__input{
+    grid-column: span 1;
+    padding-right: 30px;
+
+}
+
+.AddFinance__input input{
+    padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.AddFinance button{
+    background: var(--primary);
+    border: 0;
+   color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+}
+
+.AddFinance__button{
+   
+    display: flex;
+   
+    margin-top: 25px;
+    
+}
+
+@media screen and (max-width: 568px){
+
+    .AddFinance__input{
+        grid-column: span 2;
+        display: flex;
+        flex-direction: column;
+
+
+    }
+
+    .AddFinance__input input{
+        max-width: 180px;
+    }
+
+
+
+}
