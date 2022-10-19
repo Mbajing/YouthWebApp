@@ -13,6 +13,13 @@ router.get("/income",async (req,res)=>{
 })
 
 
+//sum all income
+router.get("/sumIncome",async (req ,res)=>{
+    const sumIncome = await Income.sum("Amount")
+    res.json(sumIncome)
+})
+
+
 //Add incoming money to database
 router.post("/income",async (req,res)=>{
     const income = req.body;
@@ -28,6 +35,14 @@ router.get("/expense",async (req,res)=>{
    
     res.json(expense)
 })
+
+//sum all expenses
+router.get("/sumExpense",async (req ,res)=>{
+    const sumExpense = await Expenditure.sum("Amount")
+    res.json(sumExpense)
+})
+
+
 
 
 //add  outgoing  money to database
