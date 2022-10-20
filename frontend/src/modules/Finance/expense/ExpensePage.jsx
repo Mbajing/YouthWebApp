@@ -46,7 +46,7 @@ function ExpensePage() {
           setTotalExpense(response.data);
         })
       }, []);
-      console.log(allExpense)
+     
 
       const handleClick = () => {
         setVisible(!visible);

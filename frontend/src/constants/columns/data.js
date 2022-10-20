@@ -127,7 +127,39 @@ export   const data ={
         );
       },
     },
-]
+],
+ EventsColumns : [
+  { field: "eventName", headerName: "Event", width: 100  },
+  { field: "attendance", headerName: "Attendance", width: 100  },
+  { field: "Date", headerName: "Date", width: 100  },
+  { field: "presidentRemark", headerName: "President Remark", width: 325  },
+  { field: "secretaryRemark", headerName: "Secretary Remark", width: 325  },
+  {
+      field: "action",
+      headerName: "Action",
+      sortable: false,
+      width: 200,
+      disableventClickEventBubbling: true,
+      renderCell: (params) => {
+        return (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <IconButton >
+              <EditIcon style={{}} color="primary" />
+            </IconButton>
+            <IconButton onClick={()=>handleDeleteIncome(params.id)}>
+              <DeleteIcon color="error" />
+            </IconButton>
+          </div>
+        );
+      },
+    },
+],
 
 
       

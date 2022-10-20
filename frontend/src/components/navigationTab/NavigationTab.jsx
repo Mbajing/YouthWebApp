@@ -6,6 +6,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { useState } from 'react';
 import colors from '../../constants/colors';
+import EventPage from '../../modules/event/events/EventPage';
 
 
 
@@ -24,15 +25,13 @@ function NavigationTab() {
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList onChange={handleChange} aria-label="lab API tabs example">
             <Tab label="Dashboard" value="1" />
-            <Tab label="Youths" value="2" />
-            <Tab label="Registered Youths" value="3" />
-            <Tab label="Executives" value="4" />
+            <Tab label="Events" value="2" />
+          
           </TabList>
         </Box>
         <TabPanel value="1">Dashboard</TabPanel>
-        <TabPanel value="2">Youths</TabPanel>
-        <TabPanel value="3">Registered Youths</TabPanel>
-        <TabPanel value="4">Exceutives</TabPanel>
+        <TabPanel value="2"><EventPage/></TabPanel>
+       
       </TabContext>
     </Box>
     </div>
