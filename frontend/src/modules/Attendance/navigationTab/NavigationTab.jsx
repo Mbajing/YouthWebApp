@@ -5,6 +5,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { useState } from 'react';
+import AttendancePage from '../attendances/AttendancePage';
 
 function NavigationTab() {
     const [value, setValue] = useState('1');
@@ -12,7 +13,6 @@ function NavigationTab() {
     const handleChange = (event, newValue) => {
         setValue(newValue);
       };
-      
   return (
     <div>
    <Box sx={{ width: '50%', typography: 'body1'  }} >
@@ -20,14 +20,13 @@ function NavigationTab() {
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList onChange={handleChange} aria-label="lab API tabs example">
             <Tab label="Dashboard" value="1" />
-            <Tab label="Youths" value="2" />
-            <Tab label="Registered Youths" value="3" />
-            <Tab label="Executives" value="4" />
+            <Tab label="Attendance" value="2" />
+            
           </TabList>
         </Box>
         <TabPanel value="1">Dashboard</TabPanel>
-        <TabPanel value="2">Attendance</TabPanel>
-       
+        <TabPanel value="2"><AttendancePage/></TabPanel>
+        
       </TabContext>
     </Box>
     </div>

@@ -12,6 +12,13 @@ router.get("/",async (req,res)=>{
     res.json(event)
 })
 
+//delete an event
+router.delete("/:id",async (req,res)=>{
+    const id = req.params.id;
+    await Events.destroy({ where: {id: id}})
+   
+    res.json("deleted succesfully")
+})
 
 
 //add succesful events   database

@@ -15,6 +15,18 @@ const handleDeleteIncome=(id)=>{
     console.log(response.data)
 })
 } 
+
+const handleDeleteEvent=(id)=>{
+  axios.delete(`http://localhost:5000/events/${id}`).then((response)=>{
+    console.log(response.data)
+})
+} 
+const handleDeleteAttendance=(id)=>{
+  axios.delete(`http://localhost:5000/attendance/${id}`).then((response)=>{
+    console.log(response.data)
+})
+} 
+
 export   const data ={
 
     YouthColumns:[
@@ -152,7 +164,38 @@ export   const data ={
             <IconButton >
               <EditIcon style={{}} color="primary" />
             </IconButton>
-            <IconButton onClick={()=>handleDeleteIncome(params.id)}>
+            <IconButton onClick={()=>handleDeleteEvent(params.id)}>
+              <DeleteIcon color="error" />
+            </IconButton>
+          </div>
+        );
+      },
+    },
+],
+ AttendanceColumns : [
+  { field: "numberPresent", headerName: "Number Present", width: 200  },
+ 
+  { field: "Date", headerName: "Date", width: 200  },
+ 
+  {
+      field: "action",
+      headerName: "Action",
+      sortable: false,
+      width: 200,
+      disableventClickEventBubbling: true,
+      renderCell: (params) => {
+        return (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <IconButton >
+              <EditIcon style={{}} color="primary" />
+            </IconButton>
+            <IconButton onClick={()=>handleDeleteAttendance(params.id)}>
               <DeleteIcon color="error" />
             </IconButton>
           </div>
