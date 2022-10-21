@@ -131,7 +131,7 @@ export   const data ={
  EventsColumns : [
   { field: "eventName", headerName: "Event", width: 100  },
   { field: "attendance", headerName: "Attendance", width: 100  },
-  { field: "Date", headerName: "Date", width: 100  },
+  { field: "Date", headerName: "Date", width: 125  },
   { field: "presidentRemark", headerName: "President Remark", width: 325  },
   { field: "secretaryRemark", headerName: "Secretary Remark", width: 325  },
   {

@@ -7,6 +7,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import { useState } from 'react';
 import colors from '../../constants/colors';
 import EventPage from '../../modules/event/events/EventPage';
+import Dashboard from '../../modules/event/dashboard/Dashboard';
 
 
 
@@ -29,7 +30,7 @@ function NavigationTab() {
           
           </TabList>
         </Box>
-        <TabPanel value="1">Dashboard</TabPanel>
+        <TabPanel value="1"><Dashboard/></TabPanel>
         <TabPanel value="2"><EventPage/></TabPanel>
        
       </TabContext>

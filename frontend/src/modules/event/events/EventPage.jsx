@@ -5,6 +5,7 @@ import {data } from "../../../constants/columns/data"
 import { useState ,useEffect } from 'react'
 import axios from 'axios'
 import AddButton from '../../../components/button/AddButton'
+import AddReviewForm from '../../../components/addReviewForm/AddReviewForm'
 
 
 
@@ -37,16 +38,43 @@ function EventPage() {
     //   setTotalEvents(response.data);
     // })
   }, []);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = { eventName, attendance, Date:date ,secretaryRemark,presidentRemark };
+    await axios.post("http://localhost:5000/events", data).then((response) => {
+      setAllEvents(response.data);
 
+     
+      setEventName("");
+      setDate("");
+      setPresidentRemark("")
+      setSecretaryRemark("")
+      setAttendance("")
+     
+    });
+    // console.log(firstname ,lastname, phoneNumber ,location ,occupation)
+  };
   return (
     <div className='offering-container'>
     <div className='offering-container__upper'>
-        <Amount  number={totalEvents}/>
+        <Amount  number={allEvents.length}/>
        
         <AddButton title={"Add Event"} handleClick={handleClick}/>
     </div>
- {visible ?  <div className="offering-container__form" >
-      
+ {visible ?  <div className="offering-container__form" style={{marginTop:40}} >
+      <AddReviewForm
+      eventName={eventName}
+      date={date}
+      attendance={attendance}
+      secretaryRemark={secretaryRemark}
+      presidentRemark={presidentRemark}
+      setEventName={setEventName}
+      setAttendance={setAttendance}
+      setPresidentRemark={setPresidentRemark}
+      setDate={setDate}
+      setSecretaryRemark={setSecretaryRemark}
+      handleSubmit={handleSubmit}
+      />
     </div>:<></>}  
     <div className='offering-container__table'>
        <ListTable allData={allEvents} columns={EventsColumns}/>
