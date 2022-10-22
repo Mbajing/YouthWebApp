@@ -6,6 +6,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { useState } from 'react';
 import AttendancePage from '../attendances/AttendancePage';
+import Dashboard from '../../Attendance/dashboard/Dashboard'
 
 function NavigationTab() {
     const [value, setValue] = useState('1');
@@ -24,7 +25,7 @@ function NavigationTab() {
             
           </TabList>
         </Box>
-        <TabPanel value="1">Dashboard</TabPanel>
+        <TabPanel value="1"><Dashboard/></TabPanel>
         <TabPanel value="2"><AttendancePage/></TabPanel>
         
       </TabContext>
