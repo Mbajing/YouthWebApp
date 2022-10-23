@@ -18,7 +18,7 @@ function Dashboard() {
       });
     }, []);
 
-    console.log()
+    
   return (
     <div className="Youth-dashboard">
     <Widget title={"Number of Meetings"} number={allAttendance.length} />
