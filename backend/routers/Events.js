@@ -24,8 +24,9 @@ router.delete("/:id",async (req,res)=>{
 //add succesful events   database
 router.post("/",async (req,res)=>{
     const event = req.body;
-    await Events.create(event)
-    res.json(event)
+   
+    const newEvent =   await Events.create(event)
+    res.json(newEvent)
 })
 
 

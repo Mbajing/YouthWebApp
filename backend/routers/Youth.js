@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
     const youth = req.body;
     await Youth.create(youth);
     const allYouths = await Youth.findAll()
-    res.json(allYouths);
+    res.json(youth);
   });
 
 //delete a youth

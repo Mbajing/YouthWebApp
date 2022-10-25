@@ -1,7 +1,7 @@
 import React from 'react'
 import "./addfinanceform.css"
 
-function AddFinanceForm({amount , date , reason , setAmount ,setDate , setReason ,handleSubmit}) {
+function AddFinanceForm({amount , date , reason , setAmount ,setDate , setReason ,handleSubmit ,placeholderName="Reason"}) {
   return (
    
       <form className="AddFinance" onSubmit={handleSubmit}>
@@ -15,10 +15,10 @@ function AddFinanceForm({amount , date , reason , setAmount ,setDate , setReason
           />
         </div>
         <div className="AddFinance__input">
-          <label>Reason:</label>
+          <label>{placeholderName}:</label>
           <input
             type="text"
-            placeholder="Reason"
+            placeholder={placeholderName}
             value={reason}
             onChange={(e) => setReason(e.target.value)}
           />

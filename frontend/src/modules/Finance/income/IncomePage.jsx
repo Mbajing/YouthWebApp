@@ -24,7 +24,9 @@ function IncomePage() {
       e.preventDefault();
       const data = { Amount:amount , Source:reason, Date:date };
       await axios.post("http://localhost:5000/finance/income", data).then((response) => {
-        setAllIncome(response.data);
+        setAllIncome((prevData)=>{
+          return [ response.data,...prevData ]
+        });
   
        
         setAmount("");
@@ -73,6 +75,7 @@ function IncomePage() {
       reason={reason}
       setReason={setReason}
       handleSubmit={handleSubmit}
+      placeholderName={"Source"}
 
       />
           {/* <AddOfferingForm setAllIncome={setAllIncome} allIncome={allIncome}/> */}

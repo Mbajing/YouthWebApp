@@ -25,7 +25,9 @@ function ExpensePage() {
         e.preventDefault();
         const data = { Amount:amount , Reason:reason, Date:date };
         await axios.post("http://localhost:5000/finance/expense", data).then((response) => {
-          setAllExpense(response.data);
+          setAllExpense((prevData)=>{
+            return [ response.data,...prevData ]
+          });
     
          
           setAmount("");

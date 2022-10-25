@@ -13,7 +13,9 @@ function AddOfferingForm({ allOfferings, setAllOfferings }) {
     await axios
       .post("http://localhost:5000/offering/", data)
       .then((response) => {
-        setAllOfferings(response.data);
+        setAllOfferings((prevData)=>{
+          return [ response.data,...prevData ]
+        });
 
        
         setAmount("");

@@ -23,8 +23,8 @@ router.get("/sumIncome",async (req ,res)=>{
 //Add incoming money to database
 router.post("/income",async (req,res)=>{
     const income = req.body;
-    await Income.create(income)
-    res.json(income)
+  const newIncome=  await Income.create(income)
+    res.json(newIncome)
 })
 
 //Expenditure
