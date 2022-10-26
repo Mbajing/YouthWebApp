@@ -11,7 +11,13 @@ const handleDelete =(id)=>{
 
 
 const handleDeleteIncome=(id)=>{
-  axios.delete(`http://localhost:5000/finance/${id}`).then((response)=>{
+  axios.delete(`http://localhost:5000/finance/income/${id}`).then((response)=>{
+    console.log(response.data)
+})
+} 
+
+const handleDeleteExpense=(id)=>{
+  axios.delete(`http://localhost:5000/finance/expense/${id}`).then((response)=>{
     console.log(response.data)
 })
 } 
@@ -132,7 +138,7 @@ export   const data ={
             <IconButton >
               <EditIcon style={{}} color="primary" />
             </IconButton>
-            <IconButton onClick={()=>handleDeleteIncome(params.id)}>
+            <IconButton onClick={()=>handleDeleteExpense(params.id)}>
               <DeleteIcon color="error" />
             </IconButton>
           </div>

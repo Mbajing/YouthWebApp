@@ -28,7 +28,7 @@ router.post("/income",async (req,res)=>{
 })
 
 //delete an income
-router.delete("/:id",  async (req, res) => {
+router.delete("/income/:id",  async (req, res) => {
     const id = req.params.id;
    await Income.destroy({ where: {id: id}})
   
@@ -61,7 +61,7 @@ router.post("/expense",async (req,res)=>{
 })
 
 //delete an expense
-router.delete("/:id",  async (req, res) => {
+router.delete("/expense/:id",  async (req, res) => {
     const id = req.params.id;
    await Expenditure.destroy({ where: {id: id}})
   
