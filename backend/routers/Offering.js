@@ -16,9 +16,9 @@ router.get("/",async (req,res)=>{
 //add a offering
 router.post("/",async (req,res)=>{
     const offering = req.body;
-    await Offering.create(offering)
-    const allOffering =  await Offering.findAll()
-    res.json(offering)
+ const newOffering =   await Offering.create(offering)
+    //const allOffering =  await Offering.findAll()
+    res.json(newOffering)
 })
 
 //sum all offerings

@@ -8,6 +8,7 @@ import "./youth.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import {data} from "../../../constants/columns/data"
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 
 
 const {YouthColumns}= data
@@ -35,7 +36,7 @@ function YouthPage() {
       <div className="Youth-container__upper">
         <YouthsAndNumber total={allYouths.length} />
         <Search />
-        <AddButton handleClick={handleClick} title={"Add Youth"} />
+        <AddButton handleClick={handleClick} title={"Add Youth"} Icon= { <PersonAddIcon color="secondary" />} />
       </div>
 
       {visible ? (

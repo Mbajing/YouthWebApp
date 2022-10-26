@@ -24,18 +24,20 @@ function AttendancePage() {
     });
   }, []);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const data = { numberPresent, Date: date };
-    await axios
-      .post("http://localhost:5000/attendance", data)
-      .then((response) => {
-        setAllAttendance(response.data);
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const data = { numberPresent, Date: date };
+  //   await axios
+  //     .post("http://localhost:5000/attendance", data)
+  //     .then((response) => {
+  //       setAllAttendance((prevData)=>{
+  //         return [ response.data,...prevData ]
+  //       });
 
-        setNumberPresent("");
-        setDate("");
-      });
-  };
+  //       setNumberPresent("");
+  //       setDate("");
+  //     });
+  // };
   return (
     <div className="offering-container">
       <div style={{ display: "flex", marginBottom: 40, paddingLeft: 15 }}>

@@ -11,7 +11,9 @@ function AddAttendanceForm({setAllAttendance}) {
         await axios
           .post("http://localhost:5000/attendance/", data)
           .then((response) => {
-            setAllAttendance(response.datas);
+            setAllAttendance((prevData)=>{
+              return [ response.data,...prevData ]
+            });
     
             console.log(response.data);
             setNumberPresent("");

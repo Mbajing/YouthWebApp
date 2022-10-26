@@ -10,9 +10,7 @@ function Dashboard() {
     const [allData, setAllData] = useState({});
 
     useEffect(() => {
-      axios.get("http://localhost:5000/attendance/").then((response) => {
-        setAllAttendance(response.data);
-      });
+    
       axios.get("http://localhost:5000/attendance/attendanceDashboard").then((response) => {
         setAllData(response.data);
       });
@@ -21,7 +19,7 @@ function Dashboard() {
     
   return (
     <div className="Youth-dashboard">
-    <Widget title={"Number of Meetings"} number={allAttendance.length} />
+    <Widget title={"Number of Meetings"} number={allData.AllAttendance ? allData.AllAttendance.length :1} />
     <Widget title={"Highest Attendance "} number={allData.MaxAttendance} />
     <Widget title={"Lowest Attendance"} number={allData.MinAttendance} />
     <Widget title={"Average Attendance"} number={allData.AvgAttendance ?Math.ceil(allData.AvgAttendance[0].AvgAttendance): 1}/>

@@ -1,12 +1,12 @@
 import React from "react";
 import "./sidebar.css";
-import PersonIcon from '@mui/icons-material/Person';
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-import EventIcon from '@mui/icons-material/Event';
-import LeaderboardIcon from '@mui/icons-material/Leaderboard';
-import LogoutIcon from '@mui/icons-material/Logout';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import PersonIcon from "@mui/icons-material/Person";
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import EventIcon from "@mui/icons-material/Event";
+import LeaderboardIcon from "@mui/icons-material/Leaderboard";
+import LogoutIcon from "@mui/icons-material/Logout";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import { useNavigate } from "react-router-dom";
 
 function Sidebar() {
@@ -16,49 +16,49 @@ function Sidebar() {
       <div className="top">
         <span className="logo">BBCYSD</span>
       </div>
-      <hr/>
+      <hr />
       <div className="center">
-        <ul>
-          <li onClick={() => navigate('/')} >
+       
+          <div onClick={() => navigate("/")} className={window.location.pathname === '/' ? "active":""}>
             <PersonIcon className="icon" />
-            <span>Youths</span>
-          </li>
-          <li onClick={() => navigate('/finance')} >
-            <AccountBalanceWalletIcon className="icon"/>
-            <span>Finance</span>
-          </li>
-          <li onClick={() => navigate('/attendance')}>
-            <LeaderboardIcon className="icon"/>
-            <span>Attendance</span>
-          </li>
-          <li onClick={() => navigate('/event')}>
-            <EventIcon className="icon"/>
-            <span>Events</span>
-          </li>
-        </ul>
+            <span className="text">Youths</span>
+          </div>
+          <div onClick={() => navigate("/finance")} className={window.location.pathname === '/finance' ? "active":""}>
+            <AccountBalanceWalletIcon className="icon" />
+            <span className="text">Finance</span>
+          </div>
+          <div onClick={() => navigate("/attendance")} className={window.location.pathname === '/attendance' ? "active":""}>
+            <LeaderboardIcon className="icon" />
+            <span className="text">Attendance</span>
+          </div>
+          <div onClick={() => navigate("/event")} className={window.location.pathname === '/event' ? "active":""}>
+            <EventIcon className="icon" />
+            <span className="text">Events</span>
+          </div>
+        
+      </div>
+      <div className="middle">
+        
+          <div className="mode">
+            <div className="mode__light" >
+              <DarkModeIcon className="icon" />
+              <span className="text">Dark </span>
+            </div>
+
+            <div className="mode__dark">
+              <WbSunnyIcon className="icon" />
+              <span className="text">Light</span>
+            </div>
+          </div>
+
+        
       </div>
       <div className="bottom">
-        <ul>
-        <li className="mode">
-          <span>
-          <DarkModeIcon className="icon"/>
-          <span>Dark </span>
-          </span>
-
-          <span>
-          <WbSunnyIcon className="icon"/>
-          <span>Light</span>
-          </span>
-
-            </li>
-       
-       
-       <li>
         
-       <LogoutIcon className="icon"/>
-         <span>Logout</span>
-         </li> 
-        </ul>
+      <div>
+            <LogoutIcon className="icon" />
+            <span className="text">Logout</span>
+          </div>
       </div>
     </div>
   );

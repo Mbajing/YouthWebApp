@@ -27,6 +27,14 @@ router.post("/income",async (req,res)=>{
     res.json(newIncome)
 })
 
+//delete an income
+router.delete("/:id",  async (req, res) => {
+    const id = req.params.id;
+   await Income.destroy({ where: {id: id}})
+  
+   res.json("deleted succesfully")
+      });
+
 //Expenditure
 
 //get all outgoing  money to database
@@ -51,6 +59,14 @@ router.post("/expense",async (req,res)=>{
     await Expenditure.create(expense)
     res.json(expense)
 })
+
+//delete an expense
+router.delete("/:id",  async (req, res) => {
+    const id = req.params.id;
+   await Expenditure.destroy({ where: {id: id}})
+  
+   res.json("deleted succesfully")
+      });
 
 
 

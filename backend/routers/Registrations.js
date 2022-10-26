@@ -21,4 +21,12 @@ router.post("/",async (req,res)=>{
     res.json(registration)
 })
 
+//delete a registration
+router.delete("/:id",  async (req, res) => {
+    const id = req.params.id;
+   await Registrations.destroy({ where: {id: id}})
+  
+   res.json("deleted succesfully")
+      });
+
 module.exports = router

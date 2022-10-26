@@ -9,13 +9,13 @@ import {Typography} from '@mui/material';
 
 
 
-function AddButton({handleClick ,title}) {
+function AddButton({handleClick ,title ,Icon}) {
   
   return (
-
+    
     <Button variant="contained" startIcon={
        
-    <PersonAddIcon color="secondary" />
+   Icon
     
   }
 
