@@ -56,8 +56,8 @@ router.get("/sumExpense",async (req ,res)=>{
 //add  outgoing  money to database
 router.post("/expense",async (req,res)=>{
     const expense = req.body;
-    await Expenditure.create(expense)
-    res.json(expense)
+  const newExpense=  await Expenditure.create(expense)
+    res.json(newExpense)
 })
 
 //delete an expense

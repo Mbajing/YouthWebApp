@@ -15,9 +15,9 @@ router.get("/",async (req,res)=>{
 //add a youth to database
 router.post("/", async (req, res) => {
     const youth = req.body;
-    await Youth.create(youth);
-    const allYouths = await Youth.findAll()
-    res.json(youth);
+   const newYouth = await Youth.create(youth);
+   // const allYouths = await Youth.findAll()
+    res.json(newYouth);
   });
 
 //delete a youth
@@ -41,8 +41,8 @@ router.get("/exco",async (req,res)=>{
   //add an exco
   router.post("/exco", async (req, res) => {
     const excos = req.body;
-    await Excos.create(excos);
-    res.json(excos);
+   const newExco= await Excos.create(excos);
+    res.json(newExco);
   });
 
 
