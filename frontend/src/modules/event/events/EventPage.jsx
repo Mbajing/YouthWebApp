@@ -45,9 +45,9 @@ function EventPage() {
     };
     await axios.post("http://localhost:5000/events", data).then((response) => {
       setAllEvents((prevData)=>{
-        return [ response.data,...prevData ]
+        return [...prevData, response.data]
       });
-   console.log(response.data)
+   
       setEventName("");
       setDate("");
       setPresidentRemark("");

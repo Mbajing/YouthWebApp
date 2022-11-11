@@ -15,6 +15,7 @@ const {YouthColumns}= data
 function YouthPage() {
   const [visible, setVisible] = useState(false);
   const [allYouths, setAllYouths] = useState([]);
+  const [query ,setQuery]=useState("")
 
   useEffect(() => {
     axios.get("http://localhost:5000/youth/").then((response) => {
@@ -26,7 +27,7 @@ function YouthPage() {
 
   },[])
 
-
+console.log(allYouths.filter(youth=> youth.firstname.toLowerCase()?.includes("qu")))
 
   const handleClick = () => {
     setVisible(!visible);
@@ -35,7 +36,7 @@ function YouthPage() {
     <div className="Youth-container">
       <div className="Youth-container__upper">
         <YouthsAndNumber total={allYouths.length} />
-        <Search />
+        <Search setQuery={setQuery} />
         <AddButton handleClick={handleClick} title={"Add Youth"} Icon= { <PersonAddIcon color="secondary" />} />
       </div>
 
@@ -48,7 +49,7 @@ function YouthPage() {
       )}
 
       <div className="Youth-container__table">
-        <ListTable allData={allYouths} columns={YouthColumns} />
+        <ListTable allData={allYouths.filter(youth=>youth.firstname.toLowerCase()?.includes(query) || youth.lastname.toLowerCase()?.includes(query))} columns={YouthColumns} />
       </div>
     </div>
   );

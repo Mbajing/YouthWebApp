@@ -1,25 +1,24 @@
-import React from 'react'
+import React from "react";
 import { useState } from "react";
 import axios from "axios";
 
-function AddAttendanceForm({setAllAttendance}) {
-    const [numberPresent, setNumberPresent] = useState("");
-    const [date, setDate] = useState("");
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const data = { numberPresent, Date: date };
-        await axios
-          .post("http://localhost:5000/attendance/", data)
-          .then((response) => {
-            setAllAttendance((prevData)=>{
-              return [ response.data,...prevData ]
-            });
-    
-            console.log(response.data);
-            setNumberPresent("");
-            setDate("");
-          });
-      };
+function AddAttendanceForm({ setAllAttendance }) {
+  const [numberPresent, setNumberPresent] = useState("");
+  const [date, setDate] = useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = { numberPresent, Date: date };
+    await axios
+      .post("http://localhost:5000/attendance/", data)
+      .then((response) => {
+        setAllAttendance((prevData) => {
+          return [...prevData, response.data];
+        });
+
+        setNumberPresent("");
+        setDate("");
+      });
+  };
   return (
     <form className="AddOffering" onSubmit={handleSubmit}>
       <div className="AddOffering__input">
@@ -44,7 +43,7 @@ function AddAttendanceForm({setAllAttendance}) {
         <button>Submit</button>
       </div>
     </form>
-  )
+  );
 }
 
-export default AddAttendanceForm
+export default AddAttendanceForm;

@@ -38,7 +38,7 @@ function Sidebar() {
         
       </div>
       <div className="middle">
-        //dark or light mode
+        
           <div className="mode">
             <div className="mode__light" >
               <DarkModeIcon className="icon" />

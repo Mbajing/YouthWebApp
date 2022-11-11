@@ -25,7 +25,7 @@ function IncomePage() {
       const data = { Amount:amount , Source:reason, Date:date };
       await axios.post("http://localhost:5000/finance/income", data).then((response) => {
         setAllIncome((prevData)=>{
-          return [ response.data,...prevData ]
+          return [ ...prevData, response.data ]
         });
   
        

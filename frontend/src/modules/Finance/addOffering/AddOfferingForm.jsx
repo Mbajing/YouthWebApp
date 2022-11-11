@@ -14,7 +14,7 @@ function AddOfferingForm({ allOfferings, setAllOfferings }) {
       .post("http://localhost:5000/offering/", data)
       .then((response) => {
         setAllOfferings((prevData)=>{
-          return [ response.data,...prevData ]
+          return [ ...prevData,response.data ]
         });
 
        
