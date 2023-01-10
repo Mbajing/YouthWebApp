@@ -36,7 +36,7 @@ function AddReviewForm({eventName , date , attendance , presidentRemark ,secreta
           <textarea
           
           
-            placeholder="Date"
+            placeholder="President Remark"
             value={presidentRemark}
             onChange={(e) => setPresidentRemark(e.target.value)}
           ></textarea>
